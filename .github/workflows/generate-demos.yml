@@ -1,4 +1,4 @@
-name: Generate CLI Demos
+name: Generate Course Assets
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  generate-demos:
+  release:
     runs-on: ubuntu-latest
     # Only run on commits starting with "release:" or manual dispatch
     if: >
@@ -16,10 +16,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip3 install Pillow
+
+      - name: Install Node dependencies
+        run: npm ci
+
       - name: Install VHS dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y ttyd ffmpeg
+          sudo apt-get install -y ttyd ffmpeg fonts-dejavu
 
       - name: Install VHS
         run: |
@@ -31,21 +48,19 @@ jobs:
       - name: Install asciinema
         run: pip3 install asciinema
 
-      - name: Generate VHS recordings
-        run: |
-          chmod +x demos/scripts/generate-all.sh
-          ./demos/scripts/generate-all.sh
+      - name: Run release build
+        run: npm run release
 
       - name: Check for changes
         id: check_changes
         run: |
-          git diff --quiet demos/**/*.gif demos/**/*.mp4 || echo "changes=true" >> $GITHUB_OUTPUT
+          git diff --quiet || echo "changes=true" >> $GITHUB_OUTPUT
 
       - name: Commit generated files
         if: steps.check_changes.outputs.changes == 'true'
         run: |
-          git config user.name "Demo Bot"
+          git config user.name "Release Bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add demos/**/*.gif demos/**/*.mp4 demos/**/*.webm
-          git commit -m "chore: Update demo recordings [skip ci]"
+          git add -A
+          git commit -m "chore: Update generated assets [skip ci]"
           git push

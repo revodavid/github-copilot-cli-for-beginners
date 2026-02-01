@@ -56,6 +56,25 @@ copilot
 
 > 💡 **Key Insight**: Skills are **automatically triggered** based on your prompt matching the skill's description. You don't need to type a special command - just ask naturally, and Copilot applies relevant skills behind the scenes.
 
+### Direct Slash Command Invocation
+
+While auto-triggering is the primary way skills work, you can also **invoke skills directly** using their name as a slash command:
+
+```bash
+# Invoke a skill directly by name with your prompt
+> /generate-tests Create tests for the user authentication module
+> /code-review Check src/utils.js for security issues
+> /security-audit Review the API endpoints
+```
+
+This gives you explicit control when you want to ensure a specific skill is used.
+
+> 📝 **Skills vs Agents Invocation**: Don't confuse skill invocation with agent invocation:
+> - **Skills**: `/skill-name <prompt>` — e.g., `/code-review Check this file`
+> - **Agents**: `/agent` (select from list) or `copilot --agent <name>` (command line)
+> 
+> If you have both a skill and an agent with the same name (e.g., "code-reviewer"), typing `/code-reviewer` invokes the **skill**, not the agent.
+
 ### How Do I Know a Skill Was Used?
 
 You can ask Copilot directly:
@@ -736,10 +755,11 @@ Ask Copilot directly:
 ## Key Takeaways
 
 1. **Skills are automatic**: Copilot loads them when your prompt matches the skill's description
-2. **SKILL.md format**: YAML frontmatter (name, description, optional license) plus markdown instructions
-3. **Locations matter**: `.github/skills/` for team sharing, `~/.copilot/skills/` for personal use
-4. **Cross-platform**: Same skill format works in Copilot CLI, VS Code, and Claude Code
-5. **Description is key**: Write descriptions that match how you naturally ask questions
+2. **Direct invocation**: You can also invoke skills directly with `/skill-name` as a slash command
+3. **SKILL.md format**: YAML frontmatter (name, description, optional license) plus markdown instructions
+4. **Locations matter**: `.github/skills/` for team sharing, `~/.copilot/skills/` for personal use
+5. **Cross-platform**: Same skill format works in Copilot CLI, VS Code, and Claude Code
+6. **Description is key**: Write descriptions that match how you naturally ask questions
 
 > 📋 **Quick Reference**: See the [Command Cheat Sheet](../QUICK-REFERENCE.md) for a complete list of commands and shortcuts.
 

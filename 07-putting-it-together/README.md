@@ -217,8 +217,8 @@ copilot
 > Implement the POST /api/favorites endpoint
 
 # PHASE 6: Test
-> /generate-tests
-# Uses your test generation skill
+> Generate comprehensive tests for the favorites feature
+# Your test generation skill activates automatically
 
 # PHASE 7: Complete
 > Create a pull request with title "Feature: Add user favorites"
@@ -258,7 +258,7 @@ copilot
 > Implement the fix using encodeURIComponent
 
 # PHASE 6: Generate tests
-> /generate-tests
+> Generate tests for the search endpoint with special characters
 > Include test cases: "test&value", "test+value", "test value"
 
 # PHASE 7: Commit and PR
@@ -461,7 +461,7 @@ Document your workflows so you can repeat them:
 2. Search for related code
 3. Switch to backend agent for analysis
 4. Implement fix
-5. /generate-tests
+5. Generate tests (skill auto-triggers)
 6. Create PR
 ```
 

@@ -648,14 +648,15 @@ After completing the demos, try these variations:
 
    # With frontend agent
    copilot
-   > /agent frontend
+   > /agent
+   # Select "frontend" from the list
    > Create a login form component
    ```
    Compare the outputs. What did the agent add that generic Copilot missed?
 
 2. **Multi-Agent Challenge**: Design a "user profile" feature using backend agent for API, frontend agent for UI. Can you synthesize them into one implementation plan?
 
-3. **Create Your Own Agent**: Create a simple agent file at `~/.copilot/agents/my-agent.agent.md` with just 5 lines of instructions. Test it with `/agent my-agent`.
+3. **Create Your Own Agent**: Create a simple agent file at `~/.copilot/agents/my-agent.agent.md` with just 5 lines of instructions. Test it with `/agent` and select "my-agent".
 
 **Self-Check**: You understand agents when you can explain why having a "security agent" review code is better than just asking "check for security issues."
 
