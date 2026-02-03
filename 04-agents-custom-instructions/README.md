@@ -14,6 +14,8 @@ By the end of this chapter, you'll be able to:
 - Delegate work across multiple agents
 - Write custom instruction files for project-specific standards
 
+> ⏱️ **Estimated Time**: ~60 minutes (25 min reading + 35 min hands-on)
+
 ---
 
 ## 🚀 Start Here: Your First 5 Minutes with Agents

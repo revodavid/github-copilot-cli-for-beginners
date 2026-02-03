@@ -14,6 +14,8 @@ By the end of this chapter, you'll be able to:
 - Use MCP in your daily workflows
 - Build a basic custom MCP server
 
+> ⏱️ **Estimated Time**: ~45 minutes (20 min reading + 25 min hands-on)
+
 ---
 
 ## 🚀 Start Here: MCP in 30 Seconds

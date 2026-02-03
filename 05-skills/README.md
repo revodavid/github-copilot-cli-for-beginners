@@ -13,6 +13,8 @@ By the end of this chapter, you'll be able to:
 - Use community skills from shared repositories
 - Know when to use skills vs agents vs MCP
 
+> ⏱️ **Estimated Time**: ~60 minutes (25 min reading + 35 min hands-on)
+
 ---
 
 ## Real-World Analogy: Power Tools

@@ -15,13 +15,17 @@ By the end of this chapter, you'll be able to:
 - Use essential slash commands to control your sessions
 - Understand how Agents, Skills, and MCP extend GitHub Copilot CLI
 
+> ⏱️ **Estimated Time**: ~45 minutes (20 min reading + 25 min hands-on)
+
 ---
 
 ## See It In Action
 
 Before we learn the theory, let's see why developers are calling this "having a senior engineer on speed dial."
 
-### Demo 1: Security Scan in 5 Seconds
+> 📖 **Reading the Examples**: Lines starting with `>` are prompts you type inside an interactive Copilot session. Lines without a prefix are shell commands you run in your terminal.
+
+### Demo 1: Security Scan in Seconds
 
 The course includes sample files with intentional bugs. Let's scan one:
 
@@ -30,8 +34,14 @@ The course includes sample files with intentional bugs. Let's scan one:
 git clone https://github.com/microsoft/github-copilot-cli-for-beginners
 cd github-copilot-cli-for-beginners
 
-# Run the security scan
-copilot -p "Review @samples/buggy-code/js/userService.js for security vulnerabilities"
+# Start Copilot
+copilot
+```
+
+Once inside the interactive session:
+
+```
+> Review @samples/buggy-code/js/userService.js for security vulnerabilities
 ```
 
 <details>
@@ -41,7 +51,7 @@ copilot -p "Review @samples/buggy-code/js/userService.js for security vulnerabil
 
 </details>
 
-**What happens** (in about 5 seconds):
+**What happens**:
 
 ```
 Security Review: userService.js
@@ -66,16 +76,16 @@ HIGH: Hardcoded Secret (line 59)
 Summary: 8 issues found (4 critical/high, 4 medium)
 ```
 
-**The takeaway**: A professional security audit in 5 seconds. Manual review would take...well...more time than that!
+**The takeaway**: A professional security audit in seconds. Manual review would take...well...more time than that!
 
 ---
 
 ### Demo 2: Explain Confusing Code
 
-Ever stared at code wondering what it does? Try this:
+Ever stared at code wondering what it does? Try this in your Copilot session:
 
-```bash
-copilot -p "Explain this in simple terms: const debounce = (fn, ms) => { let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); }; }"
+```
+> Explain this in simple terms: const debounce = (fn, ms) => { let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); }; }
 ```
 
 <details>
@@ -113,10 +123,10 @@ Common uses:
 
 ### Demo 3: Generate Working Code
 
-Need a script you'd otherwise spend 15 minutes googling?
+Need a script you'd otherwise spend 15 minutes googling? Still in your session:
 
-```bash
-copilot -p "Write a bash script that finds all files over 100MB and lists them by size"
+```
+> Write a bash script that finds all files over 100MB and lists them by size
 ```
 
 <details>
@@ -128,7 +138,13 @@ copilot -p "Write a bash script that finds all files over 100MB and lists them b
 
 **What happens**: A complete, working script in seconds that you can copy-paste-run.
 
-**The takeaway**: Instant gratification - immediately usable code.
+When you're done exploring, exit the session:
+
+```
+> /exit
+```
+
+**The takeaway**: Instant gratification, and you stayed in one continuous session the whole time.
 
 ---
 
@@ -166,11 +182,6 @@ Once you're comfortable, try:
 ---
 
 ## The Three Modes
-
-> 📖 **Reading the Examples**: Throughout this course, you'll see two types of command prompts:
-> - Lines starting with `>` are typed inside an interactive Copilot session
-> - Lines starting with `#` are comments explaining what's happening
-> - Lines without a prefix (in code blocks) are shell commands you run in your terminal
 
 ### Mode 1: Interactive Mode
 

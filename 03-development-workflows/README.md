@@ -14,6 +14,8 @@ By the end of this chapter, you'll be able to:
 - Generate tests automatically
 - Integrate Copilot with your git workflow
 
+> ⏱️ **Estimated Time**: ~55 minutes (20 min reading + 35 min hands-on)
+
 ---
 
 ## Real-World Analogy: Master Craftsman's Workflow
@@ -679,6 +681,46 @@ copilot
 5. **Git integration** automates commit messages and PR descriptions
 
 > 📋 **Quick Reference**: See the [Command Cheat Sheet](../QUICK-REFERENCE.md) for a complete list of commands and shortcuts.
+
+---
+
+## Building Your Personal Workflow
+
+There's no single "right" way to use GitHub Copilot CLI. Teams and individuals develop their own patterns over time. Here's how to build yours:
+
+### Start with Plan Mode
+
+For anything non-trivial, start with `/plan` and refine it before execution:
+
+```bash
+copilot
+
+> /plan Add user authentication to this Express app
+```
+
+Go back and forth until you like the plan. A good plan leads to better results.
+
+### Document What Works
+
+When you find prompts that work well, save them. When Copilot makes a mistake, note what went wrong and how you corrected it. Over time, this becomes your personal playbook.
+
+> 💡 **Coming in Chapter 04**: You'll learn about custom instruction files that let you codify these learnings so Copilot remembers them automatically.
+
+### Turn Repetitive Tasks into Skills
+
+If you do something more than once a day, it's a candidate for a skill:
+
+- End-of-session cleanup (find duplicated code, remove dead code)
+- Pre-commit checks (security scan, lint, test)
+- PR description generation
+
+> 💡 **Coming in Chapter 05**: You'll learn how to create skills that Copilot loads automatically based on your prompt.
+
+### Experiment Freely
+
+What works for one developer may not work for another. Some prefer long, detailed prompts. Others prefer short prompts with follow-up questions. Some use Plan mode for everything; others rarely touch it.
+
+Try different approaches and notice what feels natural for your workflow.
 
 ---
 

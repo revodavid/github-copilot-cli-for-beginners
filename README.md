@@ -2,7 +2,7 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg) ![Copilot CLI](https://img.shields.io/badge/GitHub-Copilot%20CLI-blue)
 
-🎯 [What You'll Learn](#what-youll-learn) | 📚 [Course Structure](#course-structure) | ✅ [Prerequisites](#prerequisites) | 🚀 [Quick Start](#quick-start) | 📋 [Quick Reference](#quick-reference-card) | 📖 [Glossary](#glossary)
+🎯 [What You'll Learn](#what-youll-learn) | 🤖 [Copilot Family](#understanding-the-github-copilot-family) | 📚 [Course Structure](#course-structure) | ✅ [Prerequisites](#prerequisites) | 🚀 [Quick Start](#quick-start) | 📋 [Quick Reference](#quick-reference-card) | 📖 [Glossary](#glossary)
 
 # GitHub Copilot CLI for Beginners [Work in Progress]
 
@@ -15,6 +15,19 @@ This hands-on course takes you from zero to productive with GitHub Copilot CLI. 
 **No AI experience required.** If you can use a terminal, you can learn this.
 
 **Perfect for:** Developers, students, and anyone who uses a terminal daily.
+
+## Understanding the GitHub Copilot Family
+
+GitHub Copilot has evolved into a family of AI-powered tools. Here's where each one lives:
+
+| Product | Where It Runs | Description |
+|---------|---------------|----------|
+| [**GitHub Copilot CLI**](https://docs.github.com/copilot/how-tos/copilot-cli/cli-getting-started) (this course) | Your terminal |  Terminal-native AI coding assistant  |
+| [**GitHub Copilot**](https://docs.github.com/en/copilot) | VS Code, Visual Studio, JetBrains, etc. | Agent mode, chat, inline suggestions  |
+| [**Copilot on GitHub.com**](https://github.com/copilot) | GitHub | Immersive chat about your repos, create agents, and more |
+| [**GitHub Copilot coding agent**](https://docs.github.com/copilot/using-github-copilot/using-copilot-coding-agent-to-work-on-tasks) | GitHub  | Assign issues to agents, get PRs back |
+
+This course focuses on **GitHub Copilot CLI**, bringing AI assistance directly to your terminal.
 
 ## Course Structure
 

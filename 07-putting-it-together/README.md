@@ -20,6 +20,8 @@ By the end of this chapter, you'll be able to:
 - Set up basic automation with hooks
 - Apply best practices for professional development
 
+> ⏱️ **Estimated Time**: ~60 minutes (20 min reading + 40 min hands-on)
+
 ---
 
 ## Idea to Merged PR in One Session

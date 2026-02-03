@@ -10,6 +10,8 @@ By the end of this chapter, you'll have:
 - Authenticated with your GitHub account
 - Verified it works with a simple test
 
+> ⏱️ **Estimated Time**: ~25 minutes (10 min reading + 15 min hands-on)
+
 ---
 
 ## Prerequisites
