@@ -5,7 +5,7 @@
   "scripts": {
     "generate:headers": "python3 scripts/generate-chapter-headers.py",
     "update:reference": "node scripts/update-quick-reference.js",
-    "generate:pdf": "npx md-to-pdf QUICK-REFERENCE.md --config-file .md-to-pdf.json",
+    "generate:pdf": "npx md-to-pdf QUICK-REFERENCE.md --config-file scripts/md-to-pdf.json",
     "scan:demos": "node scripts/scan-demos.js",
     "create:tapes": "node scripts/create-tapes.js",
     "generate:vhs": "node scripts/generate-demos.js",
