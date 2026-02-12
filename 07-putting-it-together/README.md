@@ -113,7 +113,7 @@ copilot
 
 ---
 
-# Advanced Workflows
+# Additional Workflows
 
 <img src="images/combined-workflows.png" alt="People assembling a colorful giant jigsaw puzzle with gears, representing how agents, skills, and MCP combine into unified workflows" width="800"/>
 
