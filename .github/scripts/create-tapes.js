@@ -13,7 +13,7 @@
 const { writeFileSync, mkdirSync, existsSync } = require('fs');
 const { join } = require('path');
 
-const rootDir = join(__dirname, '..');
+const rootDir = join(__dirname, '..', '..');
 const config = require('./demos.json');
 
 function generatePromptBlock(entry, defaultWait, index) {

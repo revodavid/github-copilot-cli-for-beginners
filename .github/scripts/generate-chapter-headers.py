@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Generate chapter header images with baked-in text.
-Usage: python scripts/generate-chapter-headers.py
+Usage: python .github/scripts/generate-chapter-headers.py
 """
 
 from PIL import Image, ImageDraw, ImageFont
@@ -22,7 +22,7 @@ CHAPTERS = {
 
 # Get project root (parent of scripts folder)
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))
 BACKGROUND_IMAGE = os.path.join(PROJECT_ROOT, "images", "chapter-header-bg.png")
 
 # Font settings - 25% larger than original 36px

@@ -20,7 +20,7 @@ const { exec, execSync } = require('child_process');
 const { readdirSync, statSync, existsSync, readFileSync, renameSync, writeFileSync, chmodSync, mkdirSync, rmSync } = require('fs');
 const { join, relative, dirname } = require('path');
 
-const rootDir = join(__dirname, '..');
+const rootDir = join(__dirname, '..', '..');
 const copilotConfigPath = join(require('os').homedir(), '.copilot', 'config.json');
 
 // Ensure on-air mode is enabled so recordings don't show model names or quota
@@ -92,7 +92,7 @@ function findTapeFiles(dir, chapterFilter) {
     const fullPath = join(dir, entry);
     const stat = statSync(fullPath);
 
-    if (stat.isDirectory() && !entry.startsWith('.') && entry !== 'node_modules' && entry !== 'scripts') {
+    if (stat.isDirectory() && !entry.startsWith('.') && entry !== 'node_modules') {
       // Apply chapter filter if specified
       if (chapterFilter.length > 0) {
         const matches = chapterFilter.some(ch => entry.startsWith(ch) || entry.includes(ch));

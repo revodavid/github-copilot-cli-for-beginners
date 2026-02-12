@@ -18,7 +18,7 @@ const { execSync } = require('child_process');
 const { readdirSync, statSync, existsSync, mkdirSync, rmSync } = require('fs');
 const { join, basename, dirname } = require('path');
 
-const rootDir = join(__dirname, '..');
+const rootDir = join(__dirname, '..', '..');
 const tmpDir = '/tmp/gif-last-frames';
 const saveFrames = process.argv.includes('--save');
 
@@ -40,7 +40,7 @@ function findGifs(dir) {
   for (const entry of readdirSync(dir)) {
     const fullPath = join(dir, entry);
     const stat = statSync(fullPath);
-    if (stat.isDirectory() && !entry.startsWith('.') && entry !== 'node_modules' && entry !== 'scripts') {
+    if (stat.isDirectory() && !entry.startsWith('.') && entry !== 'node_modules') {
       const imagesDir = join(fullPath, 'images');
       if (existsSync(imagesDir)) {
         for (const file of readdirSync(imagesDir)) {
@@ -193,7 +193,7 @@ function main() {
   console.log(`\n✓ Complete: ${ok}  ✗ Incomplete: ${incomplete}  ? Unknown: ${unknown}`);
 
   if (incomplete > 0) {
-    console.log('\nIncomplete GIFs need increased responseWait in scripts/demos.json');
+    console.log('\nIncomplete GIFs need increased responseWait in .github/scripts/demos.json');
   }
 
   // Clean up unless --save

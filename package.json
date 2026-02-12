@@ -3,18 +3,14 @@
   "version": "1.0.0",
   "description": "GitHub Copilot CLI for Beginners - Course Materials",
   "scripts": {
-    "generate:headers": "python3 scripts/generate-chapter-headers.py",
-    "update:reference": "node scripts/update-quick-reference.js",
-    "generate:pdf": "npx md-to-pdf QUICK-REFERENCE.md --config-file scripts/md-to-pdf.json",
-    "scan:demos": "node scripts/scan-demos.js",
-    "create:tapes": "node scripts/create-tapes.js",
-    "generate:vhs": "node scripts/generate-demos.js",
-    "verify:gifs": "node scripts/verify-gifs.js",
+    "generate:headers": "python3 .github/scripts/generate-chapter-headers.py",
+    "scan:demos": "node .github/scripts/scan-demos.js",
+    "create:tapes": "node .github/scripts/create-tapes.js",
+    "generate:vhs": "node .github/scripts/generate-demos.js",
+    "verify:gifs": "node .github/scripts/verify-gifs.js",
     "generate:demos": "npm run scan:demos && npm run create:tapes && npm run generate:vhs && npm run verify:gifs",
-    "generate:all": "npm run update:reference && npm run generate:pdf",
-    "refresh": "npm run update:reference && npm run generate:pdf",
-    "release": "npm run generate:headers && npm run update:reference && npm run generate:pdf && npm run generate:demos",
-    "release:ci": "npm run generate:headers && npm run update:reference && npm run generate:pdf"
+    "release": "npm run generate:headers && npm run generate:demos",
+    "release:ci": "npm run generate:headers"
   },
   "keywords": [
     "github-copilot",
@@ -23,8 +19,5 @@
     "course"
   ],
   "author": "Dan Wahlin",
-  "license": "MIT",
-  "devDependencies": {
-    "md-to-pdf": "^5.2.4"
-  }
+  "license": "MIT"
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Scan chapter README files and extract copilot demo commands
- * Updates scripts/demos.json with found commands
+ * Updates .github/scripts/demos.json with found commands
  *
  * Usage: npm run scan:demos
  *
@@ -17,7 +17,7 @@
 const { readFileSync, writeFileSync, readdirSync, existsSync } = require('fs');
 const { join } = require('path');
 
-const rootDir = join(__dirname, '..');
+const rootDir = join(__dirname, '..', '..');
 const demosJsonPath = join(__dirname, 'demos.json');
 
 // Default settings for generated tapes
@@ -142,9 +142,9 @@ writeFileSync(demosJsonPath, JSON.stringify(output, null, 2) + '\n');
 
 console.log(`\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
 console.log(`✓ Found ${demos.length} demos`);
-console.log(`✓ Updated scripts/demos.json`);
+console.log(`✓ Updated .github/scripts/demos.json`);
 console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
 console.log(`\nNext steps:`);
-console.log(`  1. Review/edit scripts/demos.json`);
+console.log(`  1. Review/edit .github/scripts/demos.json`);
 console.log(`  2. npm run create:tapes`);
 console.log(`  3. npm run generate:vhs`);
