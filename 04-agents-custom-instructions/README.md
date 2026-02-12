@@ -107,9 +107,6 @@ What about the Task Agent? It works behind the scenes to manage and track what i
 
 You can simply define your own agents to be part of your workflow! Define once, then direct!
 
-<img src="images/hiring-specialists-analogy.png" alt="Diagram showing You at the center directing four specialists: Frontend, Backend, Testing, and DevOps, with the caption Direct specialists, do not do everything yourself" width="800"/>
-
-
 ## 🗂️ Add your agents 
 
 Agent files are markdown files with a `.agent.md` extension. They have two parts: YAML frontmatter (metadata) and markdown instructions.
