@@ -10,7 +10,7 @@ In this chapter, you'll bring together everything you've learned into complete w
 
 By the end of this chapter, you'll be able to:
 
-- Combine agents, skills, and MCP in unified workflows
+- Combine agents, skills, and MCP (Model Context Protocol) in unified workflows
 - Build complete features using multi-tool approaches
 - Set up basic automation with hooks
 - Apply best practices for professional development
@@ -37,7 +37,7 @@ Individually, each section sounds limited. Together, conducted well, they create
 
 ## Idea to Merged PR in One Session
 
-This is the culmination of everything you've learned. Traditional development of a feature like "list unread books" means switching between your editor, terminal, test runner, and GitHub UI, losing context each time you switch. Watch what happens when you combine all your tools in one terminal session:
+This is the culmination of everything you've learned. Instead of switching between your editor, terminal, test runner, and GitHub UI and losing context each time, you can combine all your tools in one terminal session. We'll break down this pattern in the [Integration Pattern](#the-integration-pattern-for-power-users) section below.
 
 ```bash
 # Start Copilot in interactive mode
@@ -80,7 +80,7 @@ copilot
 # TEST
 > Generate comprehensive tests for the new feature
 
-# SHIP
+# SHIP (uses GitHub MCP from Chapter 06)
 > /review
 > Create a pull request titled "Feature: Add list unread books command"
 ```
@@ -98,7 +98,7 @@ copilot
 
 ---
 
-**Traditional approach**: Switching between editor, terminal, test runner, docs, and GitHub UI, losing context each time
+**Traditional approach**: Switching between editor, terminal, test runner, docs, and GitHub UI. Each switch causes context loss and friction.
 
 **The key insight**: You directed specialists like an architect. They handled the details. You handled the vision.
 
@@ -236,7 +236,7 @@ copilot
 >
 > ⚠️ **Performance note**: This hook calls `copilot -p` for each staged file, which takes several seconds per file. For large commits, consider limiting to critical files or running reviews manually with `/review` instead.
 
-Set up automated code review on your commits:
+A **git hook** is a script that Git runs automatically at certain points, For example, right before a commit. You can use this to run automated checks on your code. Here's how to set up an automated Copilot review on your commits:
 
 ```bash
 
@@ -277,6 +277,8 @@ EOF
 
 chmod +x .git/hooks/pre-commit
 ```
+
+> ⚠️ **macOS users**: The `timeout` command is not included by default on macOS. Install it with `brew install coreutils` or replace `timeout 60` with a simple invocation without a timeout guard.
 
 > 📚 **Official Documentation**: [Use hooks](https://docs.github.com/copilot/how-tos/copilot-cli/use-hooks) and [Hooks configuration reference](https://docs.github.com/copilot/reference/hooks-configuration) for the complete hooks API.
 >
@@ -391,12 +393,12 @@ Always gather context before asking for analysis:
 # Good
 > Get the details of issue #42
 > /agent
-# Select backend
+# Select python-reviewer
 > Analyze this issue
 
 # Less effective
 > /agent
-# Select backend
+# Select python-reviewer
 > Fix login bug
 # Agent doesn't have issue context
 ```
@@ -406,7 +408,7 @@ Always gather context before asking for analysis:
 ```bash
 # Agent analyzes
 > /agent
-# Select security
+# Select python-reviewer
 > Review this authentication code
 
 # Skill executes (automatically triggered by your prompt)
@@ -522,7 +524,7 @@ Document your workflow as you go.
 
 **Success criteria**: You've completed the feature from idea to commit using Copilot CLI, including planning, implementation, tests, documentation, and review.
 
-> 💡 **Bonus**: If you have agents set up from Chapter 04, try using `/agent` to switch to your error-handler agent for implementation review and your doc-writer agent for the README update.
+> 💡 **Bonus**: If you have agents set up from Chapter 04, try creating and using custom agents. For example, an error-handler agent for implementation review and a doc-writer agent for the README update.
 
 <details>
 <summary>💡 Hints (click to expand)</summary>
