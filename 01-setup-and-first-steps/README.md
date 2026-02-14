@@ -94,7 +94,7 @@ Once inside the interactive session:
 
 ---
 
-**The takeaway**: A professional code review in seconds. Manual review would take...well...more time than that!
+**The takeaway**: A professional code review in seconds. Manual review would take, well, more time than that!
 
 ---
 
