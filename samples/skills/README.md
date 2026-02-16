@@ -9,7 +9,7 @@ Ready-to-use skill templates for GitHub Copilot CLI. Copy any skill folder to st
 cp -r hello-world ~/.copilot/skills/
 
 # Or copy to your project for team sharing
-cp -r code-review .github/skills/
+cp -r code-checklist .github/skills/
 ```
 
 ## Available Skills
@@ -17,7 +17,7 @@ cp -r code-review .github/skills/
 | Skill | Description | Best For |
 |-------|-------------|----------|
 | `hello-world` | Minimal example (learning the format) | First-time skill creators |
-| `code-review` | Python code review checklist (PEP 8, type hints, validation) | Consistent code reviews |
+| `code-checklist` | Python code quality checklist (PEP 8, type hints, validation) | Consistent quality checks |
 | `pytest-gen` | Generate comprehensive pytest tests | Structured test generation |
 | `commit-message` | Conventional commit messages | Standardized git history |
 
@@ -28,8 +28,8 @@ Skills are **automatically triggered** when your prompt matches the skill's `des
 ```bash
 copilot
 
-> Review this code for issues
-# Copilot detects this matches "code-review" skill and loads it automatically
+> Check this code for quality issues
+# Copilot detects this matches "code-checklist" skill and loads it automatically
 
 > Generate a commit message
 # Copilot loads the "commit-message" skill
@@ -37,7 +37,7 @@ copilot
 
 You can also invoke skills directly:
 ```bash
-> /code-review Check books.py
+> /code-checklist Check books.py
 > /pytest-gen Generate tests for BookCollection
 > /commit-message
 ```

@@ -31,7 +31,7 @@ Skills work the same way. Just like swapping drill bits for different jobs, you 
 | `commit` | Generate consistent commit messages |
 | `security-audit` | Check for OWASP vulnerabilities |
 | `generate-tests` | Create comprehensive pytest tests |
-| `code-review` | Apply team code quality standards |
+| `code-checklist` | Apply team code quality standards |
 
 
 
@@ -56,7 +56,7 @@ Learn what skills are, why they matter, and how they differ from agents and MCP.
    ```
    This shows all skills Copilot can find in your project and personal folders.
 
-2. **Look at a real skill file:** Check out our provided [code-review SKILL.md](../.github/skills/code-review/SKILL.md) to see the pattern. It's just YAML frontmatter plus markdown instructions.
+2. **Look at a real skill file:** Check out our provided [code-checklist SKILL.md](../.github/skills/code-checklist/SKILL.md) to see the pattern. It's just YAML frontmatter plus markdown instructions.
 
 3. **Understand the core concept:** Skills are task-specific instructions that Copilot loads *automatically* when your prompt matches the skill's description. You don't need to activate them, just ask naturally.
 
@@ -68,8 +68,8 @@ Agent Skills are folders containing instructions, scripts, and resources that Co
 ```bash
 copilot
 
-> Review books.py for code quality issues
-# Copilot detects this matches your "code-review" skill
+> Check books.py against our quality checklist
+# Copilot detects this matches your "code-checklist" skill
 # and automatically applies its Python quality checklist
 
 > Generate tests for the BookCollection class
@@ -77,7 +77,7 @@ copilot
 # and applies your preferred test structure
 
 > What are the code quality issues in this file?
-# Copilot loads your "code-review" skill
+# Copilot loads your "code-checklist" skill
 # and checks against your team's standards
 ```
 
@@ -92,15 +92,15 @@ While auto-triggering is the primary way skills work, you can also **invoke skil
 ```bash
 > /generate-tests Create tests for the user authentication module
 
-> /code-review Check books.py for code quality issues
+> /code-checklist Check books.py for code quality issues
 
-> /security-audit Review the API endpoints
+> /security-audit Check the API endpoints for vulnerabilities
 ```
 
 This gives you explicit control when you want to ensure a specific skill is used.
 
 > 📝 **Skills vs Agents Invocation**: Don't confuse skill invocation with agent invocation:
-> - **Skills**: `/skill-name <prompt>`, e.g., `/code-review Check this file`
+> - **Skills**: `/skill-name <prompt>`, e.g., `/code-checklist Check this file`
 > - **Agents**: `/agent` (select from list) or `copilot --agent <name>` (command line)
 >
 > If you have both a skill and an agent with the same name (e.g., "code-reviewer"), typing `/code-reviewer` invokes the **skill**, not the agent.
@@ -129,7 +129,7 @@ Skills are just one piece of GitHub Copilot's extensibility model. Here's how th
 | **Skills** | Provides task-specific instructions | Specific, repeatable tasks with detailed steps |
 | **MCP** | Connects external services | Need live data from APIs |
 
-Use agents for broad expertise, skills for specific task instructions, and MCP for external data. An agent can use one or more skills during a conversation. For example, when you ask a code review agent to review your code, it might apply both a `security-audit` skill and a `style-guide` skill automatically.
+Use agents for broad expertise, skills for specific task instructions, and MCP for external data. An agent can use one or more skills during a conversation. For example, when you ask an agent to check your code, it might apply both a `security-audit` skill and a `code-checklist` skill automatically.
 
 > 📚 **Learn More**: See the official [About Agent Skills](https://docs.github.com/copilot/concepts/agents/about-agent-skills) documentation for the complete reference on skill formats and best practices.
 
@@ -162,17 +162,17 @@ Time: **30+ seconds** to type. Consistency: **varies by memory**.
 
 ### After Skills: Automatic Best Practices
 
-With a `code-review` skill installed, just ask naturally:
+With a `code-checklist` skill installed, just ask naturally:
 
 ```bash
 copilot
 
-> Review the book collection code for issues
+> Check the book collection code for quality issues
 ```
 
 **What happens behind the scenes**:
-1. Copilot sees "review" and "issues" in your prompt
-2. Checks skill descriptions, finds your `code-review` skill matches
+1. Copilot sees "code quality" and "issues" in your prompt
+2. Checks skill descriptions, finds your `code-checklist` skill matches
 3. Automatically loads your team's quality checklist
 4. Applies all checks without you listing them
 
@@ -182,7 +182,7 @@ copilot
 
 **Output**:
 ```
-## Code Review: books.py
+## Code Checklist: books.py
 
 ### Code Quality
 - [PASS] All functions have type hints
@@ -300,14 +300,14 @@ Skills use a simple markdown format with YAML frontmatter:
 
 ```markdown
 ---
-name: code-review
-description: Comprehensive code review with security, performance, and maintainability checks
+name: code-checklist
+description: Comprehensive code quality checklist with security, performance, and maintainability checks
 license: MIT
 ---
 
-# Code Review
+# Code Checklist
 
-When reviewing code, check for:
+When checking code, look for:
 
 ## Security
 - SQL injection vulnerabilities
@@ -445,9 +445,9 @@ Skills and agents work together. The agent provides expertise, the skill provide
 # Start with a code-reviewer agent
 copilot --agent code-reviewer
 
-> Review the book app for issues
+> Check the book app for quality issues
 # code-reviewer agent's expertise combines
-# with your code-review skill's checklist
+# with your code-checklist skill's checklist
 ```
 
 ---
@@ -484,7 +484,7 @@ copilot
 Available skills:
 - security-audit: Security-focused code review checking OWASP Top 10
 - generate-tests: Generate comprehensive unit tests with edge cases
-- code-review: Team-standard code review checklist
+- code-checklist: Team code quality checklist
 ...
 
 > /skills info security-audit
@@ -561,10 +561,10 @@ If you find a skill in a GitHub repository, copy its folder into your skills dir
 git clone https://github.com/github/awesome-copilot.git /tmp/awesome-copilot
 
 # Copy a specific skill to your project
-cp -r /tmp/awesome-copilot/skills/code-review .github/skills/
+cp -r /tmp/awesome-copilot/skills/code-checklist .github/skills/
 
 # Or for personal use across all projects
-cp -r /tmp/awesome-copilot/skills/code-review ~/.copilot/skills/
+cp -r /tmp/awesome-copilot/skills/code-checklist ~/.copilot/skills/
 ```
 
 > ⚠️ **Review before installing**: Always read a skill's `SKILL.md` before copying it into your project. Skills control what Copilot does, and a malicious skill could instruct it to run harmful commands or modify code in unexpected ways.
@@ -812,7 +812,7 @@ Run `/skills reload` after creating or editing skills to ensure changes are pick
 
 **Testing if a skill loads** - Ask Copilot directly:
 ```bash
-> What skills do you have available for code review?
+> What skills do you have available for checking code quality?
 # Copilot will describe relevant skills it found
 ```
 
