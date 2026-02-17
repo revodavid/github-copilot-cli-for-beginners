@@ -24,7 +24,7 @@ Enter
 Sleep 5s
 
 # Execute the prompt
-Type "Review the book collection code for issues"
+Type "Check the book collection code for quality issues"
 Sleep 2s
 Enter
 

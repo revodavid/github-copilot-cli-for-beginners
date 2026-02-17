@@ -1,11 +1,11 @@
 ---
-name: code-review
-description: Team code review checklist - use for reviewing Python code quality, bugs, security issues, and best practices
+name: code-checklist
+description: Team code quality checklist - use for checking Python code quality, bugs, security issues, and best practices
 ---
 
-# Code Review Skill
+# Code Checklist Skill
 
-Apply this checklist when reviewing Python code.
+Apply this checklist when checking Python code.
 
 ## Code Quality Checklist
 
@@ -33,7 +33,7 @@ Apply this checklist when reviewing Python code.
 Present findings as:
 
 ```
-## Code Review: [filename]
+## Code Checklist: [filename]
 
 ### Code Quality
 - [PASS/FAIL] Description of finding
